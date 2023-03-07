@@ -1,21 +1,24 @@
-import React, { useState } from "react";
-import Dropdown from './components/Dropdown';
+import React from "react";
+import SideBar from './components/SideBar';
+import Route from './components/Route';
+import AccordionPage from './pages/AccordionPage';
+import DropdownPage from './pages/DropdownPage';
 
-function App() {
-  const [selection,setSelection]= useState(null);
 
-  const handleSelect = (option)=>{
-    setSelection(option);
-  }
-
-  const options=[
-    {label:'Red',value:'red'},
-    {label:'Green',value:'green'},
-    {label:'Blue',value:'blue'}
-  ]
-  return (
-   <Dropdown options={options} value={selection} onChange={handleSelect}/>
-  );
-}
-
+function App(){
+    return(
+    <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
+        <SideBar />
+        <div className="col-span-5">
+        <Route path="/accordion">
+          <AccordionPage />
+        </Route>
+        <Route path="/">
+          <DropdownPage />
+        </Route>
+      </div>
+    </div>
+    );
+};
+ 
 export default App;
