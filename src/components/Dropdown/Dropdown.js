@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GoChevronDown } from "react-icons/go";
-import Panel from "./Panel";
+import Panel from "../Panel/Panel";
 
 function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);

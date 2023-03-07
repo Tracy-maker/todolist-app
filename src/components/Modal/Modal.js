@@ -21,7 +21,8 @@ function Modal({ onClose, children, actionBar }) {
           <div className="flex justify-end">{actionBar}</div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.querySelector('.modal-container')
   );
 }
 
